@@ -6,9 +6,7 @@ dotenv.config();
 const app = express();
 
 mongoose
-  .connect(
-    "mongodb+srv://ash:ash@cluster0.da4kcd0.mongodb.net/mern-estate?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO)
   .then(() => {
     console.log("The Server is connected to mongoDB");
   })
